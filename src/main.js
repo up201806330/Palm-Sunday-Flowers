@@ -14,6 +14,27 @@ document.getElementById("animateButton").onclick = function(){
   else checkbox.checked = true;
 };
 
+document.onclick = function(){
+  _APP._backgroundColor = document.getElementById('background.color').value = pSBC(random.RandomRange(0.2,1), getRandomColor());
+  document.body.bgColor = _APP._backgroundColor;
+  _APP._leafType = document.getElementById('leaf.type').valueAsNumber;
+  _APP._leafLength = random.RandomRange(6, 10);
+  _APP._leafWidth = random.RandomRange(3, 8);
+  _APP._colorRange = random.RandomRange(75, 90.0);
+  _APP._leafColor = document.getElementById('leaf.color').value = getRandomColor();
+  _APP._leafColors = [];
+  _APP._leafAlpha = random.RandomRange(0.5, 1);
+  _APP._leafRepeat = random.RandomRange(1, 3);
+  _APP._branchLength = random.RandomRange(10, 20);
+  _APP._branchWidth = random.RandomRange(2, 20);
+  _APP._branchAngle = random.RandomRange(15, 150);
+  _APP._branchColor = document.getElementById('branch.color').value = getRandomColor();
+  document.getElementById("title").style.color = pSBC(-0.2,_APP._branchColor);
+  document.getElementById("subtitle").style.color = pSBC(-0.9, _APP._branchColor);
+  document.getElementById("animateButton").style.background = pSBC(0.4, _APP._leafColor);
+  _APP.OnChange(true);
+};
+
 let _APP = null;
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -25,27 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
       _APP.OnChange();
     };
   });
-
-  document.onclick = function(){
-  
-    _APP._backgroundColor = document.getElementById('background.color').value = pSBC(random.RandomRange(0.2,1), getRandomColor());
-    document.body.bgColor = _APP._backgroundColor;
-    _APP._leafType = document.getElementById('leaf.type').valueAsNumber;
-    _APP._leafLength = random.RandomRange(6, 10);
-    _APP._leafWidth = random.RandomRange(3, 8);
-    _APP._colorRange = random.RandomRange(75, 90.0);
-    _APP._leafColor = document.getElementById('leaf.color').value = getRandomColor();
-    _APP._leafColors = [];
-    _APP._leafAlpha = random.RandomRange(0.5, 1);
-    _APP._leafRepeat = random.RandomRange(1, 3);
-    _APP._branchLength = random.RandomRange(10, 20);
-    _APP._branchWidth = random.RandomRange(2, 20);
-    _APP._branchAngle = random.RandomRange(15, 150);
-    _APP._branchColor = document.getElementById('branch.color').value = getRandomColor();
-    document.getElementById("title").style.color = _APP._branchColor;
-    document.getElementById("animateButton").style.background = pSBC(0.4, _APP._leafColor);
-    _APP.OnChange(true);
-  };
 
 });
 
