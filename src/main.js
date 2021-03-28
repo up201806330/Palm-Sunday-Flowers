@@ -42,6 +42,8 @@ window.addEventListener('DOMContentLoaded', () => {
     _APP._branchWidth = random.RandomRange(2, 20);
     _APP._branchAngle = random.RandomRange(15, 150);
     _APP._branchColor = document.getElementById('branch.color').value = getRandomColor();
+    document.getElementById("title").style.color = _APP._branchColor;
+    document.getElementById("animateButton").style.background = pSBC(0.4, _APP._leafColor);
     _APP.OnChange(true);
   };
 
